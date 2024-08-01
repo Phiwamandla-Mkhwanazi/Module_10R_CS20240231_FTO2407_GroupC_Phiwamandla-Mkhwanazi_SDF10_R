@@ -103,6 +103,20 @@ input {
     padding: var(--container-padding);
     gap: var(--form-gap);
 }
+#item-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+#item-list li {
+    background-color: white;
+    font-size: large;
+    padding: 10px 20px;
+    border-radius: .25rem;
+    margin-bottom: .5rem; /* Space between list items */
+    border: 1px solid var(--border-color);
+}
 
 .btn {
     background-color: white;
