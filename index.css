@@ -1,15 +1,14 @@
 :root {
-    --bg-color: #dae8f0;
-    --input-color: #bed2dd;
-    --btn-color: #8d5a8d;
+    --bg-color: RGB(255, 252, 246);
+    --input-color:   #fce7f3;
+    --btn-color: #451a03;
     --border-color: #000000;
-    --font-color: #ffffff;
+    --font-color: #451a03;
     --btn-font-color: #ffffff;
     --btn-background-color: blanchedalmond;
     --btn-border-color: #000000;
-    --form-gap: .5rem;
     --input-radius: .5rem;
-    --font-size-large: x-large;
+    --font-size-large: large;
     --img-max-width: 170px;
     --img-max-height: 150px;
     --margin: 1rem;
@@ -42,8 +41,10 @@ main {
     padding: var(--container-padding);
 }
 
-.cart-img {
-    grid-area: cart-img;
+/*=============Cart Image=================*/
+.cart-img 
+{
+
     display: flex;
     justify-content: center;
     align-items: start;
@@ -59,23 +60,18 @@ img {
     object-fit: contain;
 }
 
-.cart-events {
-    grid-area: cart-events;
+/*=============Cart Events=================*/
+.cart-events 
+{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column wrap;
     gap: .5rem;
     padding: var(--container-padding);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--form-gap);
-}
 
-input {
+input 
+{
     border-radius: var(--input-radius);
     border: 0;
     background-color: var(--input-color);
@@ -83,51 +79,67 @@ input {
     text-align: center;
     color: var(--font-color);
     padding: .5rem;
+
 }
 
-.btn-add {
+input:focus
+{
+    outline: 0;
+}
+
+button 
+{
     border-radius: var(--input-radius);
     border: 0;
     background-color: var(--btn-color);
     font-size: var(--font-size-large);
     color: var(--btn-font-color);
     padding: .5rem;
+
 }
 
-.cart-items {
-    grid-area: cart-items;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/*=============Cart Items=================*/
+.cart-items 
+{
+    position: relative;
     align-items: start;
     padding: var(--container-padding);
     gap: var(--form-gap);
+    color: var(--font-color);
 }
-#item-list {
+
+#item-list 
+{
     list-style-type: none; /* Remove default list bullets */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
 }
 
-#item-list li {
-    background-color: white;
+#item-list li 
+{
+    background-color: var(--input-color);
     font-size: large;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: .25rem;
     margin-bottom: .5rem; /* Space between list items */
-    border: 1px solid var(--border-color);
+    border: 0;
 }
 
-.btn {
-    background-color: white;
-    font-size: large;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: .25rem;
-}
 
-@media (max-width: 768px) {
-    main {
+
+/*=============Media Queries================*/
+@media (min-width: 768px) 
+{
+    :root
+    {
+        --img-max-width: 250px;
+        --img-max-height: 200px;
+    }
+    main 
+    {
         grid-template-rows: auto;
         grid-template-areas: 
             "cart-img"
@@ -136,31 +148,76 @@ input {
         height: auto;
     }
 
-    .cart-img {
+    .cart-img 
+    {
         margin: 0;
         padding: var(--container-padding);
     }
 
-    img {
+    img 
+    {
         max-width: 100%;
         max-height: auto;
     }
 
-    .cart-events,
-    .cart-items {
+    .cart-events, .cart-items 
+    {
+        margin: auto;
+        width: 80vw;
+        gap: 1.5rem;
+    }
+    button, input 
+    {
+        font-size: 2.25rem;
+    }
+    .cart-items
+    {
+        gap: 5rem;
+    }
+}
+
+
+
+
+/*=============Media Queries================*/
+@media (min-width: 1440px) 
+{
+    :root
+    {
+        --img-max-width: 450px;
+        --img-max-height: 450px;
+    }
+    main 
+    {
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "cart-img"
+            "cart-events"
+            "cart-items";
+        height: auto;
+    }
+
+    .cart-img 
+    {
         margin: 0;
         padding: var(--container-padding);
     }
-}
 
-@media (max-width: 480px) {
-    input, .btn-add {
-        font-size: large;
-        padding: .25rem;
-    }
-
-    img {
+    img 
+    {
         max-width: 100%;
-        height: auto;
+        max-height: auto;
+    }
+
+    .cart-events, .cart-items 
+    {
+        margin: auto;
+        width: 80vw;
+        gap: 2.5rem;
+    }
+    button, input 
+    {
+        font-size: 5.25rem;
     }
 }
+
