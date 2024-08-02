@@ -6,6 +6,9 @@ Create a mobile app using Firebase and Scrimba. This project will enhance your C
 
 ![alt text](<Mobile App.png>)
 
+## Beta state
+![alt text](<about.png>)
+
 
 ## Steps to Complete
 
